@@ -1,0 +1,139 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Bangla Movie Trailer</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">বাংলা মুভি ট্রেলার</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="izZU6bI96e8" data-toggle="modal" data-target="#trailer">
+    <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/11200913_457346227759668_6913624632860949138_n.jpg?oh=1dc0cc4c93155fba715712844699ebd6&oe=561CF74F&__gda__=1443892773_164b7e025cc548c1faf835d1dac7a1c0" width="220" height="342">
+    <h2>অগ্নী ২</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="BkUIP-DGq28" data-toggle="modal" data-target="#trailer">
+    <img src="http://podmopatarjol.com/wp-content/uploads/2015/05/movie-gallery-PPJ-21.png" width="220" height="342">
+    <h2>পদ্ম পাতার জল</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="EI2ZdVPuzPI" data-toggle="modal" data-target="#trailer">
+    <img src="https://scontent-sin1-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11249021_1753418728218531_340966462253821886_n.jpg?oh=d3940f970f83fcaea1a2b9e48d174f51&oe=561DBCEB" width="220" height="342">
+    <h2>লাভ ম্যারেজ</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5zjTBJfx9Mg" data-toggle="modal" data-target="#trailer">
+    <img src="https://scontent-sin1-1.xx.fbcdn.net/hphotos-xtp1/v/l/t1.0-9/11188168_384822508377483_7921731828245799131_n.jpg?oh=5c18a906136f61efeedd99aa1f7a8ed5&oe=56105046" width="220" height="342">
+    <h2>মুসাফির</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="seIFtpSUC-s" data-toggle="modal" data-target="#trailer">
+    <img src="https://scontent-sin1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10426331_392150327656857_6590299574975895935_n.png?oh=d957aaaee25dcf1ffc161dbea7f3fcae&oe=561B2B24" width="220" height="342">
+    <h2>ছুঁয়ে দিলে মন</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="oyg3cTp5KTE" data-toggle="modal" data-target="#trailer">
+    <img src="https://bdmusiccafe.files.wordpress.com/2014/12/warning-2015-bangla-movie-poster.jpg" width="220" height="342">
+    <h2>ওয়ার্নিং</h2>
+</div>
+
+    </div>
+  </body>
+</html>
